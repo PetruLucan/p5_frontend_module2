@@ -11,19 +11,130 @@
 <body>
 
     <script>
-        //Ex 1.
-        var car = {
-            model: "Logan",
-            price: "5000ron",
-            owner: "romanian",
-            description: "ieftina",
-            resultAsString: function() {
-                return this.model + ' ' + "costs" + ' ' + this.price + ' ' + "and the owner is" + ' ' + this.owner;
-            }
-        }
-        console.log(car.resultAsString());
+        //Ex 1. Return a string
+        function createCar(car) {
+            car = {
+                model: 'Logan',
+                price: '5000ron',
+                owner: 'romanian',
+                description: 'ieftina',
+                resultAsString: function() {
+                    return this.model + " " + 'costs' + " " + this.price + " " + 'and the owner is' + " " + this.owner;
+                }
+            };
+            console.log(car.resultAsString());
+        };
+        createCar();
+        // console.log(createCar())
 
-        //ex 2.
+
+
+        //ex 2. Increase price
+
+        let cars = [{
+            model: 'Logan',
+            price: 5000,
+            owner: 'romanian'
+        }, {
+            model: 'Lexus',
+            price: 9000,
+            owner: 'foreign'
+
+        }, {
+            model: 'Toyota',
+            price: 11000,
+            owner: 'sports car lover'
+        }, ]
+
+
+        // function newPrice() {
+        //     return cars.map(priceIncreased => priceIncreased.price += 2);
+        // }
+        // const result = newPrice(cars)
+        // console.log(cars)
+
+
+        // function newPrice() {
+        //     for (i = 0; i < cars.length; i++) {
+        //         let priceIncreased = cars[i].price += 5;
+        //     }
+        // };
+        // let result = newPrice();
+        // console.log(cars)
+
+
+
+        for (i = 0; i < cars.length; i++) {
+            var newPrice = cars[i].price += 7;
+        }
+        console.log(cars)
+
+        //Ex3 Compute total price
+        const sameCars = [{
+            model: 'Logan',
+            price: 5000,
+            owner: 'romanian'
+        }, {
+            model: 'Lexus',
+            price: 9000,
+            owner: 'foreign'
+
+        }, {
+            model: 'Toyota',
+            price: 11000,
+            owner: 'sports car lover'
+        }, ]
+
+
+        // const total = sameCars.reduce(function(acc, cValue) {
+        //     return {
+        //         price: acc.price + cValue.price
+        //     };
+        // })
+        // console.log(total);
+
+        const total = sameCars.reduce((acc, cValue) => ({
+            price: acc.price + cValue.price
+        }));
+        console.log(total)
+
+
+        //Ex3 Build a function takes an array then returns a string
+
+        var otherCars = [{
+            'carIndex': 1,
+            'model': 'Mitsubishi',
+            'description': 'is a japanese car'
+        }, {
+            'carIndex': 2,
+            'model': 'Toyota',
+            'description': 'is also a japanese car'
+        }, {
+            'carIndex': 3,
+            'model': 'Ford',
+            'description': 'is an american car'
+        }, ];
+
+        function singleString() {
+            return otherCars.map(objects => ([objects.carIndex + "." + objects.model + " " + objects.description])).join(", ");
+        };
+
+        const stringResult = singleString(otherCars)
+        console.log(stringResult)
+
+
+
+        // return cars.map(priceIncreased => priceIncreased.price += 2);
+
+
+        // // console.log(otherCars)
+        // var otherCars = singleString;
+
+        // function singleString() {
+        //     return this.carIndex + "." + this.model + " " + this.description;
+        // };
+        // // singleString();
+        // console.log(otherCars)
     </script>
 
 
