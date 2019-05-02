@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title> Semafor </title>
+    <meta charset="UTF-8">
+
+</head>
+
+<body>
+    <div>
+        <button id="noClass" type="button">Stop</button>
+
+        <form id="formId" class="red">
+            <input class="defaultRed" id="red">
+            <input class="defaultYellow" id="yellow">
+            <input class="defaultGreen" id="green">
+
+        </form>
+    </div>
+    <style>
+        input {
+            display: block;
+            width: 100px;
+            height: 100px;
+            border: 0.5px solid;
+        }
+        
+        #red {
+            background-color: red;
+        }
+        
+        form.defaultRed #red {
+            background-color: red;
+        }
+        
+        form.defaultRed #green,
+        form.defaultRed #yellow {
+            background-color: white;
+        }
+        
+        form.defaultYellow #red,
+        form.defaultYellow #green {
+            background-color: white;
+        }
+        
+        form.defaultYellow #yellow {
+            background-color: yellow;
+        }
+        
+        form.defaultGreen #red,
+        form.defaultGreen #yellow {
+            background-color: white;
+        }
+        
+        form.defaultGreen #green {
+            background-color: green;
+        }
+    </style>
+    <script src="semaforJS.js"></script>
+</body>
+
+</html>
